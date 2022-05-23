@@ -1,0 +1,19 @@
+doctrine:
+    dbal:
+        # configure these for your database server
+        host: '%env(MYSQL_HOST)%'
+        dbname: '%env(MYSQL_DATABASE)%'
+        user: '%env(MYSQL_USER)%'
+        password: '%env(MYSQL_ROOT_PASSWORD)%'
+        driver: 'pdo_mysql'
+        server_version: '8.0'
+        charset: utf8mb4
+        port: 3306
+    orm:
+        mappings:
+            PlayDDD\Domain\Product\Product:
+                is_bundle: false
+                type: xml
+                dir: '%kernel.project_dir%/src/Infrastructure/Persistance/Doctrine/Mappings'
+                prefix: PlayDDD\Domain\Product
+
